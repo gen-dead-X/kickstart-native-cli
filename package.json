@@ -2,8 +2,9 @@
   "name": "kickstart-native-cli",
   "version": "1.0.2",
   "main": "index.js",
-  "type": "module",
-  "bin": "./index.mjs",
+  "bin": {
+    "kickstart-native-cli": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import { Command } from "commander";
-import inquirer from "inquirer";
-import chalk from "chalk";
-import { degit } from "degit";
-import { execSync } from "node:child_process";
+const { Command } = require("commander");
+const inquirer = require("inquirer");
+const chalk = require("chalk");
+const degit = require("degit"); // CommonJS module
+const { execSync } = require("child_process");
 
 const program = new Command();
 
