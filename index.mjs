@@ -48,7 +48,7 @@ program
 
     // Step 3: Clone the boilerplate
     console.log(blue("\nCloning the boilerplate..."));
-    const emitter = degit("your-github-username/your-template-repo", {
+    const emitter = degit("https://github.com/gen-dead-X/kickstart-native", {
       cache: false,
       force: true,
     });
