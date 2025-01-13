@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
-import { prompt } from "inquirer";
-import { green, blue, red, yellow } from "chalk";
-import degit from "degit";
+import inquirer from "inquirer";
+import chalk from "chalk";
+import { degit } from "degit";
 import { execSync } from "node:child_process";
 
 const program = new Command();
 
 program
-  .name("rn-starter-cli")
+  .name("kickstart-native-cli")
   .description(
     "A CLI to bootstrap a React Native starter template with custom options"
   )
@@ -19,10 +19,10 @@ program
   .command("init")
   .description("Initialize a new React Native project")
   .action(async () => {
-    console.log(green("\nWelcome to the Kickstart Native Starter CLI!\n"));
+    console.log(chalk.green("\nWelcome to the Kickstart Native CLI!\n"));
 
     // Step 1: Ask user for project name
-    const { projectName } = await prompt([
+    const { projectName } = await inquirer.prompt([
       {
         type: "input",
         name: "projectName",
@@ -32,7 +32,7 @@ program
     ]);
 
     // Step 2: Ask user for features
-    const { features } = await prompt([
+    const { features } = await inquirer.prompt([
       {
         type: "checkbox",
         name: "features",
@@ -47,50 +47,50 @@ program
     ]);
 
     // Step 3: Clone the boilerplate
-    console.log(blue("\nCloning the boilerplate..."));
-    const emitter = degit("https://github.com/gen-dead-X/kickstart-native", {
+    console.log(chalk.blue("\nCloning the boilerplate..."));
+    const emitter = degit("your-github-username/your-template-repo", {
       cache: false,
       force: true,
     });
 
     try {
       await emitter.clone(projectName);
-      console.log(green("\nTemplate cloned successfully!"));
+      console.log(chalk.green("\nTemplate cloned successfully!"));
     } catch (error) {
-      console.error(red("\nError cloning template:"), error);
+      console.error(chalk.red("\nError cloning template:"), error);
       return;
     }
 
     // Step 4: Install dependencies
-    console.log(blue("\nInstalling dependencies..."));
+    console.log(chalk.blue("\nInstalling dependencies..."));
     try {
       execSync(`cd ${projectName} && npm install`, { stdio: "inherit" });
     } catch (error) {
-      console.error(red("\nError installing dependencies:"), error);
+      console.error(chalk.red("\nError installing dependencies:"), error);
       return;
     }
 
     // Step 5: Configure features
-    console.log(yellow("\nConfiguring selected features..."));
+    console.log(chalk.yellow("\nConfiguring selected features..."));
     if (features.includes("redux")) {
-      console.log(green("- Adding Redux setup..."));
+      console.log(chalk.green("- Adding Redux setup..."));
       // Add Redux setup logic here
     }
     if (features.includes("zustand")) {
-      console.log(green("- Adding Zustand setup..."));
+      console.log(chalk.green("- Adding Zustand setup..."));
       // Add Zustand setup logic here
     }
     if (features.includes("navigation")) {
-      console.log(green("- Adding React Navigation setup..."));
+      console.log(chalk.green("- Adding React Navigation setup..."));
       // Add React Navigation setup logic here
     }
     if (features.includes("styled-components")) {
-      console.log(green("- Adding Styled Components setup..."));
+      console.log(chalk.green("- Adding Styled Components setup..."));
       // Add Styled Components setup logic here
     }
 
     console.log(
-      green(`\nYour project '${projectName}' is ready! Happy coding!\n`)
+      chalk.green(`\nYour project '${projectName}' is ready! Happy coding!\n`)
     );
   });
 

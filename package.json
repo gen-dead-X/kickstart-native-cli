@@ -1,11 +1,9 @@
 {
   "name": "kickstart-native-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "type": "module",
-  "bin": {
-    "kickstart-native-cli": "./index.mjs"
-  },
+  "bin": "./index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "chalk": "^4.1.2",
+    "chalk": "^5.4.1",
     "commander": "^13.0.0",
     "degit": "^2.8.4",
     "inquirer": "^12.3.1"
