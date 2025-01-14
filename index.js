@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const { Command } = require("commander");
-const inquirer = require("inquirer");
-const chalk = require("chalk");
-const degit = require("degit"); // CommonJS module
-const { execSync } = require("child_process");
+import { Command } from "commander";
+import inquirer from "inquirer";
+import chalk from "chalk";
+import degit from "degit"; // CommonJS module
+import { execSync } from "node:child_process";
 
 const program = new Command();
 
@@ -36,19 +36,19 @@ program
       {
         type: "checkbox",
         name: "features",
-        message: "Select features to include:",
+        message: "Select features to include (Space to Select) :",
         choices: [
           { name: "Redux", value: "redux" },
           { name: "Zustand", value: "zustand" },
           { name: "React Navigation", value: "navigation" },
-          { name: "Styled Components", value: "styled-components" },
+          { name: "Nativewind", value: "nativewind" },
         ],
       },
     ]);
 
     // Step 3: Clone the boilerplate
     console.log(chalk.blue("\nCloning the boilerplate..."));
-    const emitter = degit("your-github-username/your-template-repo", {
+    const emitter = degit("https://github.com/gen-dead-X/kickstart-native", {
       cache: false,
       force: true,
     });
@@ -64,7 +64,7 @@ program
     // Step 4: Install dependencies
     console.log(chalk.blue("\nInstalling dependencies..."));
     try {
-      execSync(`cd ${projectName} && npm install`, { stdio: "inherit" });
+      execSync(`cd ${projectName} && yarn install`, { stdio: "inherit" });
     } catch (error) {
       console.error(chalk.red("\nError installing dependencies:"), error);
       return;
@@ -84,8 +84,10 @@ program
       console.log(chalk.green("- Adding React Navigation setup..."));
       // Add React Navigation setup logic here
     }
-    if (features.includes("styled-components")) {
-      console.log(chalk.green("- Adding Styled Components setup..."));
+    if (features.includes("nativewind")) {
+      console.log(
+        chalk.green("- Adding Nativewind Support Components setup...")
+      );
       // Add Styled Components setup logic here
     }
 
