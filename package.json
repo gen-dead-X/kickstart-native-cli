@@ -17,6 +17,11 @@
   ],
   "author": "Joyrudra Biswas",
   "description": "This is a CLI tool to kickstart your react-native project with a boilerplate",
+  "homepage": "https://github.com/gen-dead-X/kickstart-native-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gen-dead-X/kickstart-native-cli"
+  },
   "dependencies": {
     "chalk": "4.1.2",
     "commander": "^13.0.0",
