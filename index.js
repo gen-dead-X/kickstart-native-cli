@@ -38,7 +38,7 @@ program
         name: "features",
         message: "Select features to include (Space to Select) :",
         choices: [
-          { name: "Redux", value: "redux" },
+          { name: "MMKV", value: "mmkv" },
           { name: "Zustand", value: "zustand" },
           { name: "React Navigation", value: "navigation" },
           { name: "Nativewind", value: "nativewind" },
@@ -72,8 +72,8 @@ program
 
     // Step 5: Configure features
     console.log(chalk.yellow("\nConfiguring selected features..."));
-    if (features.includes("redux")) {
-      console.log(chalk.green("- Adding Redux setup..."));
+    if (features.includes("mmkv")) {
+      console.log(chalk.green("- Adding MMKV setup..."));
       // Add Redux setup logic here
     }
     if (features.includes("zustand")) {
