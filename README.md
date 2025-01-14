@@ -2,6 +2,13 @@
 
 A command-line interface (CLI) tool to quickly scaffold React Native projects with a standardized template and essential configurations.
 
+## 📱 Screenshots
+
+<div align="center" style="display: flex; gap: 1rem;">
+   <img src="/dark_snap.png" alt="Dark Theme" width="300"/>
+   <img src="/light_snap.png" alt="Light Theme" width="300"/>
+</div>
+
 ## Features
 
 - Create new React Native projects with TypeScript support
@@ -31,7 +38,7 @@ npx kickstart-native init
 
 ## Requirements
 
-- Node.js 14 or higher
+- Node.js 20 or higher
 - npm or yarn
 - React Native development environment setup
 
