@@ -1,12 +1,10 @@
 {
-  "name": "@gen-dead-x/kickstart-native-cli",
-  "version": "1.2.1",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
+  "name": "kickstart-native-cli",
+  "version": "1.0.0",
   "main": "index.js",
-  "bin": "./index.js",
+  "bin": {
+    "kickstart-native-cli": "index.js"
+  },
   "type": "module",
   "license": "MIT",
   "scripts": {
@@ -24,7 +22,7 @@
   "homepage": "https://github.com/gen-dead-X/kickstart-native-cli#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gen-dead-X/kickstart-native-cli"
+    "url": "git+https://github.com/gen-dead-X/kickstart-native-cli.git"
   },
   "dependencies": {
     "chalk": "4.1.2",
@@ -34,5 +32,8 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
