@@ -1,5 +1,5 @@
 {
-  "name": "kickstart-native-cli",
+  "name": "@gen-dead-x/kickstart-native-cli",
   "version": "1.2.1",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
