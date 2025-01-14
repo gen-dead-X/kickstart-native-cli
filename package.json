@@ -4,6 +4,7 @@
   "main": "index.js",
   "bin": "./index.js",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,9 +15,8 @@
     "native",
     "boilerplate"
   ],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Joyrudra Biswas",
+  "description": "This is a CLI tool to kickstart your react-native project with a boilerplate",
   "dependencies": {
     "chalk": "4.1.2",
     "commander": "^13.0.0",
