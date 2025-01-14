@@ -86,6 +86,8 @@ program
     console.log(
       chalk.green(`\nYour project '${projectName}' is ready! Happy coding!\n`)
     );
+
+    console.log(chalk.blue.bold("If you like this CLI, please star the repo! \n Buy me a coffee: https://www.buymeacoffee.com/joyrudra.itobuz \n"));
   });
 
 program.parse(process.argv);
