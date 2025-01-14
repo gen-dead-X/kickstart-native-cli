@@ -5,8 +5,8 @@ A command-line interface (CLI) tool to quickly scaffold React Native projects wi
 ## 📱 Screenshots
 
 <div align="center" style="display: flex; gap: 1rem;">
-   <img src="/dark_snap.png" alt="Dark Theme" width="300"/>
-   <img src="/light_snap.png" alt="Light Theme" width="300"/>
+   <img src="public/dark_snap.png" alt="Dark Theme" width="300"/>
+   <img src="public/light_snap.png" alt="Light Theme" width="300"/>
 </div>
 
 ## Features
