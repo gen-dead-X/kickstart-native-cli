@@ -3,8 +3,9 @@
 import { Command } from "commander";
 import inquirer from "inquirer";
 import chalk from "chalk";
-import degit from "degit"; // CommonJS module
+import degit from "degit";
 import { execSync } from "node:child_process";
+import * as packageJson from "./package.json" with { type: "json" };
 
 const program = new Command();
 
@@ -13,7 +14,7 @@ program
   .description(
     "A CLI to bootstrap a React Native starter template with custom options"
   )
-  .version("1.0.0");
+  .version(packageJson.default.version);
 
 program
   .command("init")
@@ -21,7 +22,6 @@ program
   .action(async () => {
     console.log(chalk.green("\nWelcome to the Kickstart Native CLI!\n"));
 
-    // Step 1: Ask user for project name
     const { projectName } = await inquirer.prompt([
       {
         type: "input",
@@ -31,7 +31,6 @@ program
       },
     ]);
 
-    // Step 2: Ask user for features
     const { features } = await inquirer.prompt([
       {
         type: "checkbox",
@@ -46,7 +45,6 @@ program
       },
     ]);
 
-    // Step 3: Clone the boilerplate
     console.log(chalk.blue("\nCloning the boilerplate..."));
     const emitter = degit("https://github.com/gen-dead-X/kickstart-native", {
       cache: false,
@@ -61,7 +59,6 @@ program
       return;
     }
 
-    // Step 4: Install dependencies
     console.log(chalk.blue("\nInstalling dependencies..."));
     try {
       execSync(`cd ${projectName} && yarn install`, { stdio: "inherit" });
@@ -70,25 +67,20 @@ program
       return;
     }
 
-    // Step 5: Configure features
     console.log(chalk.yellow("\nConfiguring selected features..."));
     if (features.includes("mmkv")) {
       console.log(chalk.green("- Adding MMKV setup..."));
-      // Add Redux setup logic here
     }
     if (features.includes("zustand")) {
       console.log(chalk.green("- Adding Zustand setup..."));
-      // Add Zustand setup logic here
     }
     if (features.includes("navigation")) {
       console.log(chalk.green("- Adding React Navigation setup..."));
-      // Add React Navigation setup logic here
     }
     if (features.includes("nativewind")) {
       console.log(
         chalk.green("- Adding Nativewind Support Components setup...")
       );
-      // Add Styled Components setup logic here
     }
 
     console.log(
