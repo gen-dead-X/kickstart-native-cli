@@ -27,7 +27,7 @@ program
         type: "input",
         name: "projectName",
         message: "What is the name of your project?",
-        default: "MyReactNativeApp",
+        default: "MyKickstartedApp",
       },
     ]);
 

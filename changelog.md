@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-### v1.1.6 (Latest)
+### v1.2.0 (Latest)
 
 - Added support for React Native 0.73
 - Improved TypeScript template configuration

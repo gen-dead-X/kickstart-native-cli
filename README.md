@@ -22,6 +22,30 @@ A command-line interface (CLI) tool to quickly scaffold React Native projects wi
 npx kickstart-native-cli init
 ```
 
+## 🛠 Development
+
+1. Navigate to the app directory
+
+```bash
+cd MyKickstartedApp
+```
+
+2. Install dependencies:
+
+```bash
+yarn install
+```
+
+3. Run the app:
+
+```bash
+# iOS
+yarn ios
+
+# Android
+yarn android
+```
+
 ## What's Included
 
 - TypeScript configuration
