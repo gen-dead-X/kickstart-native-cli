@@ -36,6 +36,10 @@ cd MyKickstartedApp
 yarn install
 ```
 
+```bash
+cd ios && pod install && cd ..
+```
+
 3. Run the app:
 
 ```bash

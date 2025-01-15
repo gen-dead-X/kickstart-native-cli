@@ -1,6 +1,6 @@
 {
   "name": "kickstart-native-cli",
-  "version": "1.2.2",
+  "version": "1.2.21",
   "main": "index.js",
   "bin": {
     "kickstart-native-cli": "index.js"
