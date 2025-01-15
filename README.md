@@ -16,16 +16,10 @@ A command-line interface (CLI) tool to quickly scaffold React Native projects wi
 - Configure common project settings
 - Initialize Git repository
 
-## Installation
+## Usage
 
 ```bash
 npx kickstart-native-cli init
-```
-
-Example:
-
-```bash
-npx kickstart-native init
 ```
 
 ## What's Included
